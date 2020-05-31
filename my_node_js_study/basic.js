@@ -10,7 +10,6 @@ var show = function(){
     console.log('Hello Annonymous function')
 }
 show()
-
 //Arrow function
 var user = (a)=>{
     console.log(a)
