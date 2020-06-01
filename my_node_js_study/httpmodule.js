@@ -11,6 +11,6 @@ res.write('<h1 style="color:red">Node JS HTTP Module</h1>');
 res.end()
 // end () for the end the response
 //Remember that don't forget to add res.end()
-}).listen(4000,()=>console.log('server running on port 4000'));
+}).listen(4200,()=>console.log('server running on port 4000'));
 
 //Here listen 3000 for the server port will run at 3000, here second argument for printing the result in console or for given requirement, but we don't give that argument then it will not print nothing there
