@@ -1,16 +1,10 @@
-//For creating server in node js we use "httpmodule"
-
-const http = require('http');
-const server = http.createServer(function(req,res){
-//Here the createServer method is already defined in http module for creating server and it takes two argument called request(req) and response(res) with function
-//res.writeHead(200,{'content-type':'text/plain'}) // For Plain text
-res.writeHead(200,{'content-type':'text/HTML'}) // For HTML
-//here writeHead for the given content type(which is HTML or plain text) with status if its success 200 will come
-res.write('<h1 style="color:red">Node JS HTTP Module</h1>');
-//res.write('message') it will print the message in the browser
-res.end()
-// end () for the end the response
-//Remember that don't forget to add res.end()
-}).listen(4200,()=>console.log('server running on port 4000'));
-
-//Here listen 3000 for the server port will run at 3000, here second argument for printing the result in console or for given requirement, but we don't give that argument then it will not print nothing there
+const http = require('http')
+//http module is use for the "creating the server". Here we are not using the /http because it is directly available.
+const server = http.createServer(function (req, res) {
+    //We can give formate of following res.write message either in html or text for that we use the following way
+    //res.writeHead(200,{'content-type':'text/plain'});here 200 is for the status,this is for plain text if you use the html tag it will come with tag in the browser
+    res.writeHead(200,{'content-type':'text/html'}) //here 200 is for the status,this is for html functionality
+    res.write('<h1>Hello http module</h1>') //This is for the write content on web page after web page start with following port number
+    res.end();
+    //This is mandetory for ending the process
+}).listen(8080,()=>console.log('server running on port 8080')) //Here is console.log for the printing same or checking something if server starts or run successfully.
