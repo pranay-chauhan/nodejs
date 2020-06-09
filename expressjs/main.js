@@ -2,10 +2,14 @@
 
 const express =require('express');
 const app  = express();
+app.use(express.static('public')) // This is for when we use the files which come under public folder so when we are using the above line no need to write the public in the directory URL.
+// app.get('/',(req,res)=>{
+//     res.send('Hello World')
+// });
 
 app.get('/',(req,res)=>{
-    res.send('Hello World')
-});
+    res.sendFile(__dirname + "/index.html")
+})
 app.get('/users',(req,res)=>{
     res.send('users data acess')
 })
