@@ -10,8 +10,15 @@ app.use(express.static('public')) // This is for when we use the files which com
 app.get('/',(req,res)=>{
     res.sendFile(__dirname + "/index.html")
 })
-app.get('/users',(req,res)=>{
-    res.send('users data acess')
+// app.get('/users',(req,res)=>{
+//     res.send('users data acess')
+// })
+
+//Following code for the id with parameters
+
+app.get('/users/:id',(req,res)=>{
+    console.log(req.params)
+    res.send('user data send with paramters ' + req.params.id)
 })
 app.post('/users/profiles',(req,res)=>{
     res.send('users profile data acess')
